@@ -1,0 +1,11 @@
+services:
+  postgres:
+    image: postgis/postgis:15-3.3
+    container_name: routinely-db
+    environment:
+      POSTGRES_DB: ${DB_ROUTINELY}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
